@@ -5,8 +5,9 @@ import java.util.Scanner;
 public class StudentController {
 	public void start() {
 		Scanner  sc = new Scanner(System.in);
-		
 		boolean check=true;
+	    Student [] st = null;
+	    Student st1 = null;
 		while(check) {
 			System.out.println("1. 학생 정보 입력");
 			System.out.println("2. 학생 정보 조회");
@@ -18,12 +19,23 @@ public class StudentController {
 			switch (select) {
 			case 1: 
 				System.out.println("1");
+				StudentService ss = new StudentService();
+				st = ss.makeStudents();
 				break;
 			case 2 :
 				System.out.println("2");
+				StudentView sv = new StudentView();
+				sv.view(st);
+				System.out.println("문자열 입력");
+				String s = sc.next();
+				sv.view(s);
 				break;
 			case 3 :
 				System.out.println("3");
+				StudentService ss1 = new StudentService();
+				st1 = ss1.findStudent(st);
+				StudentView sv2 = new StudentView();
+				sv2.view(st1);
 				break;
 			case 4 :
 				System.out.println("4");
