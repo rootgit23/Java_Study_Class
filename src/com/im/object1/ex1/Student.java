@@ -8,4 +8,14 @@ public class Student {
 	int math;
 	int total;
 	double avg;
+	
+	public void setTotal() {
+		this.total = this.kor+this.eng+this.math;
+		this.setAvg();
+	}
+	
+	public void setAvg() {
+		this.avg = this.total / 3.0;
+	}
+	
 }

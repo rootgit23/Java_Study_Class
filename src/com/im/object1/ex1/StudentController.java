@@ -3,6 +3,17 @@ package com.im.object1.ex1;
 import java.util.Scanner;
 
 public class StudentController {
+	Scanner sc;
+	StudentView sv;
+	StudentService studentService;
+	Student [] students;
+	
+	public StudentController() {
+		sc = new Scanner(System.in);
+		sv = new StudentView();
+		studentService = new StudentService();
+	}
+	
 	public void start() {
 		Scanner  sc = new Scanner(System.in);
 		boolean check=true;
@@ -42,6 +53,10 @@ public class StudentController {
 				break;
 			case 5 :
 				System.out.println("5");
+				StudentService ss2 = new StudentService();
+				st = ss2.addStudent(st);
+				StudentView sv3 = new StudentView();
+				sv3.view(st);
 				break;
 			default:
 				System.out.println("종료중");
