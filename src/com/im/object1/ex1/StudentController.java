@@ -37,9 +37,9 @@ public class StudentController {
 				System.out.println("2");
 				StudentView sv = new StudentView();
 				sv.view(st);
-				System.out.println("문자열 입력");
-				String s = sc.next();
-				sv.view(s);
+				//System.out.println("문자열 입력");
+				//String s = sc.next();
+				//sv.view(s);
 				break;
 			case 3 :
 				System.out.println("3");
@@ -50,6 +50,15 @@ public class StudentController {
 				break;
 			case 4 :
 				System.out.println("4");
+				StudentService ss3 = new StudentService();
+				st = ss3.removeStudent(st);
+				if(st == null) {
+					System.out.println("삭제하려는 번호의 학생이 없습니다");
+				}
+				else {
+					StudentView sv5 = new StudentView();
+					sv5.view(st);
+				}
 				break;
 			case 5 :
 				System.out.println("5");
